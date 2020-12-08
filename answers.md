@@ -1,6 +1,14 @@
-Hey there :sunglasses:  
-Following are my answers to the excercise questions, I think I have written down everything you are looking for but if there is a screenshot or a script or anything is missing or you simply want to see more, please please let me know as I did every step in the excercise and would really welcome an oppotunity to chat with you about it!   
-Thank you! :relaxed:
+## Setup the environment
+1. First, let's install Vagrant which will help you build and manage virtual machines easily.
+2. On your computer, download and install the [appropriate package](https://www.vagrantup.com/downloads) of Vagrant for your opearting system.
+3. Launch a command prompt or terminal, run the command ```vagrant``` to verify that Vagrant has been installed successfully. 
+4. Next, we need to initialize a Vagrant project in order to build a Linux virtual machine, simply follow these [3 steps](https://learn.hashicorp.com/tutorials/vagrant/getting-started-project-setup?in=vagrant/getting-started), and then you will have a fully running virtual machine in VirtualBox running Ubuntu 18.04 LTS 64-bit.
+5. When you initilized a Vagrant project, a box has been installed automatically to quickly clone a virtual machine, [configure the box](https://learn.hashicorp.com/tutorials/vagrant/getting-started-boxes?in=vagrant/getting-started#use-a-box) so it will be used as a base by your project.
+6. Once the box is configured, you are ready to boot your very first Vagrant environment! :checkered_flag: Run the command ```vagrant up``` from your terminal.
+7. Once the VM is booted, since there is no GUI, you can SSH into the VM to interact with it. Run ```logout``` to get out of the SSH session. 
+8. Other things you may want to do with your VM, run ```vagrant suspend``` to suspend the machine, ```vagrant halt``` to gracefully shut down the machine, and ```vagrant destory``` to destory the machine which removes all traces.
+
+Did you just get your enivornment setup in 5 mins? Awesome start! 
 
 ## Collecting Metrics
 Question: Add tags in the Agent config file and show us a screenshot of your host and its tags on the Host Map page in Datadog.  
