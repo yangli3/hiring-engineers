@@ -6,9 +6,23 @@
 5. When you initilized a Vagrant project, a box has been installed automatically to quickly clone a virtual machine, [configure the box](https://learn.hashicorp.com/tutorials/vagrant/getting-started-boxes?in=vagrant/getting-started#use-a-box) so it will be used as a base by your project.
 6. Once the box is configured, you are ready to boot your very first Vagrant environment! :checkered_flag: Run the command ```vagrant up``` from your terminal.
 7. Once the VM is booted, since there is no GUI, you can SSH into the VM to interact with it. Run ```logout``` to get out of the SSH session. 
-8. Other things you may want to do with your VM, run ```vagrant suspend``` to suspend the machine, ```vagrant halt``` to gracefully shut down the machine, and ```vagrant destory``` to destory the machine which removes all traces.
+8. Other things you can do with your VM: run ```vagrant suspend``` to suspend the machine, ```vagrant halt``` to gracefully shut down the machine, and ```vagrant destory``` to destory the machine which removes all traces.
 
-Did you just get your enivornment setup in 5 mins? Awesome start! 
+How about that? Setting up a VM in less than 5 mins. Cool. 
+
+9. Now we want to use Datadog to collect metrics from that VM, and you just need 2 things to make it happen:  
+   a. Apply a Datadog trial account at https://www.datadoghq.com/, use "Datadog Recruiting Candidate" in the "Company" field so you can get approved right away and start using Datadog.  
+   b. Install the Datadog Agent on your VM and it will automatically collect metrics and report events about your system.  
+10. There are 2 ways to install the Datadog Agent, either install it directly or as a container version. We will walk through the first method (it only takes one step) here, but take a look at this [instruction](https://docs.datadoghq.com/agent/docker/?tab=standard) if you want to install the container version. 
+11. Different platforms require different commands to run to install the Agent, since we are running Ubuntu, SSH into your VM and run the following command to install the Agent in one step.  
+```DD_AGENT_MAJOR_VERSION=7 DD_API_KEY=<Your 32-digit API key> DD_SITE="datadoghq.com" bash -c "$(curl -L https://s3.amazonaws.com/dd-agent/scripts/install_script.sh)"```  
+   a. Find your API key by going to the Datadog console --> Integrations --> APIs --> API Keys 
+   b. You will be asked to provide your Datadog account password after running the command  
+12. Run this status command ```sudo service datadog-agent status``` to verify installation.
+13. If you go to your Datadog console --> Infrastructure --> Host Map, you should see your vagrant host show up as well. 
+
+That's it! You have now successfully setup your enviornment and next we get to play around with the Agent so you can gain visibility and insights into your systems and applications.
+
 
 ## Collecting Metrics
 Question: Add tags in the Agent config file and show us a screenshot of your host and its tags on the Host Map page in Datadog.  
