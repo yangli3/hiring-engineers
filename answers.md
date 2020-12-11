@@ -1,9 +1,9 @@
 ## Setup the environment
-1. First, let's install Vagrant which will help you build and manage virtual machines easily.
+1. First, let's install Vagrant which would help you build and manage virtual machines easily.
 2. On your computer, download and install the [appropriate package](https://www.vagrantup.com/downloads) of Vagrant for your opearting system.
 3. Launch a command prompt or terminal, run the command ```vagrant``` to verify that Vagrant has been installed successfully. 
 4. Next, we need to initialize a Vagrant project in order to build a Linux virtual machine, simply follow these [3 steps](https://learn.hashicorp.com/tutorials/vagrant/getting-started-project-setup?in=vagrant/getting-started), and then you will have a fully running virtual machine in VirtualBox running Ubuntu 18.04 LTS 64-bit.
-5. When you initilized a Vagrant project, a box has been installed automatically to quickly clone a virtual machine, [configure the box](https://learn.hashicorp.com/tutorials/vagrant/getting-started-boxes?in=vagrant/getting-started#use-a-box) so it will be used as a base by your project.
+5. After you initilize a Vagrant project, a box has been installed automatically to quickly clone a virtual machine, [configure the box](https://learn.hashicorp.com/tutorials/vagrant/getting-started-boxes?in=vagrant/getting-started#use-a-box) so it will be used as a base by your project.
 6. Once the box is configured, you are ready to boot your very first Vagrant environment! :checkered_flag: Run the command ```vagrant up``` from your terminal.
 7. Once the VM is booted, since there is no GUI, you can SSH into the VM to interact with it. Run ```vagrant ssh``` to start an SSH session, run ```logout``` to get out of the SSH session. 
 8. Other things you can do with your VM: run ```vagrant suspend``` to suspend the machine, ```vagrant halt``` to gracefully shut down the machine, and ```vagrant destory``` to destory the machine which removes all traces.
@@ -87,7 +87,7 @@ That's it! You now have successfully setup your enviornment and next we get to p
    ```
    
 ## Visualizing Data
-Datadog offers many ways to visualize your data, on the dashboard level, you can Timeboards or Screenboards. Timeboards are commonly used for troubleshooting, correlation, and general data exploration, while Screenboards are commonly used as status boards or storytelling views that update in real-time or represent fixed points in the past.
+Datadog offers many ways to visualize your data, on the dashboard level, you can use Timeboards or Screenboards. Timeboards are commonly used for troubleshooting, correlation, and general data exploration, while Screenboards are commonly used as status boards or storytelling views that update in real-time or represent fixed points in the past.
 
 Datadog has an extensive API set that can be used to access the Datadog platform programmatically. Let's call an API to create a cool Timeboard so you can show off the custom metric you just created. :sunglasses:  
 
@@ -95,7 +95,7 @@ Datadog has an extensive API set that can be used to access the Datadog platform
 2. Once you have the Postman environment setup, we can work with the Datadog API collection  
    a. In Postman, on the left hand side, under the ```Datadog API collection```, find ```Dashboards``` and click ```Create a new dashboard```  
    b. Use ```POST``` with ```https://api.datadoghq.com/api/v1/dashboard```  
-   c. Enter the following script for ```body``` and hit ```Send```  
+   c. Enter the following JSON for ```body``` and hit ```Send```  
    ```
    {
      "description": "string",
